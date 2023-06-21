@@ -1,8 +1,8 @@
 ---
-title: Project structure
+title: 프로젝트 구조
 ---
 
-A typical SvelteKit project looks like this:
+일반적으로 SvelteKit 프로젝트는 아래와 같은 구조를 가집니다.
 
 ```bash
 my-project/
@@ -29,63 +29,63 @@ my-project/
 └ vite.config.js
 ```
 
-You'll also find common files like `.gitignore` and `.npmrc` (and `.prettierrc` and `.eslintrc.cjs` and so on, if you chose those options when running `npm create svelte@latest`).
+이와 더불어 `.gitignore`, `.npmrc` 등 일반적인 파일들도 존재할 수 있습니다. (`.prettierrc`, `.eslintrc.cjs` 와 같은 설정파일도 존재할 수 있으며, 이는 프로젝트 생성시 선택적으로 생성할 수 있습니다.)
 
-## Project files
+## 프로젝트 파일
 
 ### src
 
-The `src` directory contains the meat of your project. Everything except `src/routes` and `src/app.html` is optional.
+`src` 디렉토리는 프로젝트의 핵심을 담고 있습니다. `src/routes` 와 `src/app.html` 을 제외한 모든 파일은 선택적입니다.
 
-- `lib` contains your library code (utilities and components), which can be imported via the [`$lib`](modules#$lib) alias, or packaged up for distribution using [`svelte-package`](packaging)
-    - `server` contains your server-only library code. It can be imported by using the [`$lib/server`](server-only-modules) alias. SvelteKit will prevent you from importing these in client code.
-- `params` contains any [param matchers](advanced-routing#matching) your app needs
-- `routes` contains the [routes](routing) of your application. You can also colocate other components that are only used within a single route here
-- `app.html` is your page template — an HTML document containing the following placeholders:
-    - `%sveltekit.head%` — `<link>` and `<script>` elements needed by the app, plus any `<svelte:head>` content
-    - `%sveltekit.body%` — the markup for a rendered page. This should live inside a `<div>` or other element, rather than directly inside `<body>`, to prevent bugs caused by browser extensions injecting elements that are then destroyed by the hydration process. SvelteKit will warn you in development if this is not the case
-    - `%sveltekit.assets%` — either [`paths.assets`](configuration#paths), if specified, or a relative path to [`paths.base`](configuration#paths)
-    - `%sveltekit.nonce%` — a [CSP](configuration#csp) nonce for manually included links and scripts, if used
-    - `%sveltekit.env.[NAME]%` - this will be replaced at render time with the `[NAME]` environment variable, which must begin with the [`publicPrefix`](configuration#env) (usually `PUBLIC_`). It will fallback to `''` if not matched.
-- `error.html` is the page that is rendered when everything else fails. It can contain the following placeholders:
-    - `%sveltekit.status%` — the HTTP status
-    - `%sveltekit.error.message%` — the error message
-- `hooks.client.js` contains your client [hooks](hooks)
-- `hooks.server.js` contains your server [hooks](hooks)
-- `service-worker.js` contains your [service worker](service-workers)
+- `lib` 디렉토리는 라이브러리 코드 (유틸리티, 컴포넌트 등)을 담고 있습니다. [`$lib`](modules#$lib) 별칭을 통해 불러올 수 있으며, [`svelte-package`](packaging) 를 통해 패키징하여 배포할 수 있습니다.
+    - `server` 디렉터리는 서버 전용 라이브러리 코드를 담고 있습니다. [`$lib/server`](server-only-modules) 별칭을 통해 불러올 수 있으며, SvelteKit 은 클라이언트 코드에서 이를 불러오는 것을 막습니다.
+- `params` 디렉토리는 [파라미터 매처](advanced-routing#matching)를 담고 있습니다.
+- `routes` 디렉토리는 [라우트](routing)를 담고 있습니다. 라우트 내에서만 사용되는 컴포넌트도 함께 두어도 됩니다.
+- `app.html` 파일은 페이지 템플릿입니다. 아래의 플레이스홀더를 포함하고 있습니다.
+    - `%sveltekit.head%` — 앱에 필요한 `<link>` 와 `<script>` 요소, 그리고 `<svelte:head>` 내용
+    - `%sveltekit.body%` — 렌더링된 페이지의 마크업. 이는 `<body>` 내부가 아닌 `<div>` 나 다른 요소 내부에 위치해야 합니다. 이는 브라우저 확장 프로그램이 삽입한 요소가 하이드레이션 과정에서 파괴되는 버그를 방지하기 위함입니다. 이를 충족하지 못할 경우 개발 모드에서 경고가 발생합니다.
+    - `%sveltekit.assets%` — [`paths.assets`](configuration#paths) 가 지정되어 있다면 해당 경로, 그렇지 않다면 [`paths.base`](configuration#paths) 의 상대 경로를 가리킵니다.
+    - `%sveltekit.nonce%` — 수동으로 포함된 링크와 스크립트를 위한 [CSP](configuration#csp) nonce 를 가리킵니다.
+    - `%sveltekit.env.[NAME]%` - 렌더링 시 `[NAME]` 환경 변수로 대체됩니다. 이는 [`publicPrefix`](configuration#env) (일반적으로 `PUBLIC_`) 로 시작하는 변수여야 합니다. 매칭되는 변수가 없다면 `''` 로 대체됩니다.
+- `error.html` 파일은 모든 것이 실패했을 때 렌더링되는 페이지입니다. 아래의 플레이스홀더를 포함하고 있습니다.
+    - `%sveltekit.status%` — HTTP 상태 코드
+    - `%sveltekit.error.message%` — 에러 메시지
+- `hooks.client.js` 파일은 클라이언트 전용 [훅](hooks)을 담고 있습니다.
+- `hooks.server.js` 파일은 서버 전용 [훅](hooks)을 담고 있습니다.
+- `service-worker.js` 파일은 [서비스 워커](service-workers)를 담고 있습니다.
 
-(Whether the project contains `.js` or `.ts` files depends on whether you opt to use TypeScript when you create your project. You can switch between JavaScript and TypeScript in the documentation using the toggle at the bottom of this page.)
+(프로젝트에 `.ts` 파일이 포함되어 있다면, `.js` 대신 `.ts` 확장자를 사용합니다. 이는 프로젝트 생성시 TypeScript 를 사용하도록 선택했는지에 따라 달라집니다. 이 문서의 하단에 있는 토글을 통해 JavaScript 와 TypeScript 를 전환할 수 있습니다.)
 
-If you added [Vitest](https://vitest.dev) when you set up your project, your unit tests will live in the `src` directory with a `.test.js` extension.
+프로젝트를 생성할 때 [Vitest](https://vitest.dev) 를 추가했다면, 유닛 테스트는 `.test.js` 확장자를 가진 `src` 디렉토리에 위치합니다.
 
 ### static
 
-Any static assets that should be served as-is, like `robots.txt` or `favicon.png`, go in here.
+`robots.txt`, `favicon.png` 와 같이 그대로 제공되어야 하는 정적 파일은 이 디렉토리에 위치합니다.
 
 ### tests
 
-If you added [Playwright](https://playwright.dev/) for browser testing when you set up your project, the tests will live in this directory.
+프로젝트를 생성할 때 [Playwright](https://playwright.dev/) 를 추가했다면, 브라우저 테스트는 이 디렉토리에 위치합니다.
 
 ### package.json
 
-Your `package.json` file must include `@sveltejs/kit`, `svelte` and `vite` as `devDependencies`.
+`package.json` 파일은 `@sveltejs/kit`, `svelte`, `vite` 를 `devDependencies` 로 포함해야 합니다.
 
-When you create a project with `npm create svelte@latest`, you'll also notice that `package.json` includes `"type": "module"`. This means that `.js` files are interpreted as native JavaScript modules with `import` and `export` keywords. Legacy CommonJS files need a `.cjs` file extension.
+`npm create svelte@latest` 를 통해 프로젝트를 생성하면, `package.json` 파일에는 `type` 필드가 `"module"` 으로 설정되어 있습니다. 이는 `.js` 파일이 `import` 와 `export` 키워드를 사용하는 네이티브 자바스크립트 모듈로 해석되는 것을 의미합니다. 레거시 CommonJS 파일은 `.cjs` 확장자를 사용해야 합니다.
 
 ### svelte.config.js
 
-This file contains your Svelte and SvelteKit [configuration](configuration).
+이 파일은 Svelte 와 SvelteKit [설정](configuration)을 담고 있습니다.
 
 ### tsconfig.json
 
-This file (or `jsconfig.json`, if you prefer type-checked `.js` files over `.ts` files) configures TypeScript, if you added typechecking during `npm create svelte@latest`. Since SvelteKit relies on certain configuration being set a specific way, it generates its own `.svelte-kit/tsconfig.json` file which your own config `extends`.
+`npm create svelte@latest` 를 통해 타입 체크를 추가했다면 이 파일(또는 `jsconfig.json`)은 TypeScript 를 설정합니다. SvelteKit 은 특정 설정이 특정한 방식으로 설정되어야 정상 작동하므로, `extends` 를 통해 자체 `.svelte-kit/tsconfig.json` 파일을 생성합니다.
 
 ### vite.config.js
 
-A SvelteKit project is really just a [Vite](https://vitejs.dev) project that uses the [`@sveltejs/kit/vite`](modules#sveltejs-kit-vite) plugin, along with any other [Vite configuration](https://vitejs.dev/config/).
+SvelteKit 프로젝트는 사실상 [`@sveltejs/kit/vite`](modules#sveltejs-kit-vite) 플러그인을 사용하는 [Vite](https://vitejs.dev) 프로젝트입니다. 다른 [Vite 설정](https://vitejs.dev/config/)과 함께 사용할 수 있습니다.
 
-## Other files
+## 기타 파일
 
 ### .svelte-kit
 
-As you develop and build your project, SvelteKit will generate files in a `.svelte-kit` directory (configurable as [`outDir`](configuration#outdir)). You can ignore its contents, and delete them at any time (they will be regenerated when you next `dev` or `build`).
+프로젝트를 개발 및 빌드할 때, SvelteKit 은 `.svelte-kit` 디렉토리에 파일을 생성합니다. 이 디렉토리는 [`outDir`](configuration#outdir) 로 설정할 수 있습니다. 이 디렉토리의 내용은 무시하고 언제든지 삭제할 수 있습니다 (다음 `dev` 또는 `build` 시 다시 생성됩니다).
