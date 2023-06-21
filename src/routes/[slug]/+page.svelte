@@ -32,7 +32,7 @@
         <div class="text content">
             <h1>{data.page.title}</h1>
 
-            <a class="edit" href="https://github.com/qroffle/sveltekit-docs-ko/edit/master/documentation/{data.page.file}">
+            <a class="edit" href="https://github.com/qroffle/sveltekit-docs-ko/edit/main/documentation/{data.page.file}">
                 <Icon size={50} name="edit" /> GitHub 에서 페이지 편집하기
             </a>
 
