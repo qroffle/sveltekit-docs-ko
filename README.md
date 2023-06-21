@@ -1,38 +1,14 @@
-# create-svelte
+# SvelteKit 한국어 문서
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+https://sveltekit-docs-ko.pages.dev
 
-## Creating a project
+https://kit.svelte.dev/docs 의 비공식 한국어 번역본입니다.
+`/docs`, `/faq` 페이지를 제외한 다른 모든 페이지를 제거하고, 한글을 깔끔하게 표기할 수 있도록 폰트를 변경하였습니다.
 
-If you're seeing this, you've probably already done this step. Congrats!
+## Contributing
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+언제나 환영합니다. 번역 관련 PR은 이슈 없이 바로 보내주시고, 다른 내용의 PR은 이슈를 먼저 생성해주세요.
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+## License
 
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+[MIT 라이선스](https://github.com/qroffle/sveltekit-docs-ko/blob/main/LICENSE)를 따릅니다.
