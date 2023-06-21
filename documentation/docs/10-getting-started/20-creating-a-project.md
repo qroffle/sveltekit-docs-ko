@@ -12,7 +12,7 @@ npm run dev
 ```
 
 첫번째 명령어는 `my-app` 디렉토리에 새로운 프로젝트를 생성합니다. TypeScript 와 같은 기본적인 도구를 설정할 것인지 물어보게 됩니다.
-[추가 도구를 설정하는 방법](../faq#integrations)에 대해서는 FAQ 를 참고하세요.
+[추가 도구를 설정하는 방법](faq#integrations)에 대해서는 FAQ 를 참고하세요.
 그 다음 명령어는 의존성을 설치하고 [localhost:5173](http://localhost:5173) 에 서버를 시작합니다.
 
 2가지 기본적인 개념이 있습니다.
