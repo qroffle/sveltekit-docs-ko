@@ -12,7 +12,7 @@
 <Shell>
     <Nav slot="top-nav">
         <svelte:fragment slot="home">
-            <span><strong>kit</strong>.svelte.dev</span>
+            <span><strong>SvelteKit</strong> 한국어 문서</span>
         </svelte:fragment>
 
         <svelte:fragment slot="nav-right">
