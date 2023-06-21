@@ -41,7 +41,7 @@ Your `webpack.config.js` or `rollup.config.js` should be replaced with a `svelte
 
 You will need to add an [adapter](adapters). `sapper build` is roughly equivalent to [adapter-node](https://github.com/sveltejs/kit/tree/master/packages/adapter-node) while `sapper export` is roughly equivalent to [adapter-static](https://github.com/sveltejs/kit/tree/master/packages/adapter-static), though you might prefer to use an adapter designed for the platform you're deploying to.
 
-If you were using plugins for filetypes that are not automatically handled by [Vite](https://vitejs.dev), you will need to find Vite equivalents and add them to the [Vite config](project-structure#프로젝트-파일-vite-config-js).
+If you were using plugins for filetypes that are not automatically handled by [Vite](https://vitejs.dev), you will need to find Vite equivalents and add them to the [Vite config](project-structure#project-files-vite-config-js).
 
 ### src/client.js
 

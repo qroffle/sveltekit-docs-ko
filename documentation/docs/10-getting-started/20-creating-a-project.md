@@ -21,7 +21,7 @@ npm run dev
 
 파일들을 수정하여 어떻게 동작하는지 확인해보세요.
 
-## 에디터 설정
+## Editor setup
 
 [Visual Studio Code](https://code.visualstudio.com/download) 에 [Svelte 익스텐션](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode) 을 설치하여 사용하는 것을 권장합니다.
 [기타 에디터 지원](https://sveltesociety.dev/tools#editor-support) 에 대해서는 여기를 참고하세요.

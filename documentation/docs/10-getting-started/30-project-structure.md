@@ -31,7 +31,7 @@ my-project/
 
 이와 더불어 `.gitignore`, `.npmrc` 등 일반적인 파일들도 존재할 수 있습니다. (`.prettierrc`, `.eslintrc.cjs` 와 같은 설정파일도 존재할 수 있으며, 이는 프로젝트 생성시 선택적으로 생성할 수 있습니다.)
 
-## 프로젝트 파일
+## Project files
 
 ### src
 
@@ -84,7 +84,7 @@ my-project/
 
 SvelteKit 프로젝트는 사실상 [`@sveltejs/kit/vite`](modules#sveltejs-kit-vite) 플러그인을 사용하는 [Vite](https://vitejs.dev) 프로젝트입니다. 다른 [Vite 설정](https://vitejs.dev/config/)과 함께 사용할 수 있습니다.
 
-## 기타 파일
+## Other files
 
 ### .svelte-kit
 

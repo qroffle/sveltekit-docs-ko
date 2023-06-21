@@ -2,18 +2,18 @@
 title: 소개합니다
 ---
 
-## 시작하기에 앞서
+## Before we begin
 
 > Svelte 또는 SvelteKit 을 처음 접해보신다면, [인터랙티브 튜토리얼 (영문)](https://learn.svelte.dev)을 확인해 보시는건 어떠세요?
 >
 > [디스코드 서버](https://svelte.dev/chat) 에서 도움을 받으실 수도 있습니다.
 
-## SvelteKit 은 무엇인가요?
+## What is SvelteKit?
 
 SvelteKit 은 [Svelte](https://svelte.dev/) 를 사용하여 강력하고 성능이 우수한 웹 애플리케이션을 빠르게 개발할 수 있는 프레임워크입니다.
 React 에서 오신 분이라면, SvelteKit 은 Next 와 비슷합니다. Vue 에서 오신 분이라면, SvelteKit 은 Nuxt 와 비슷합니다.
 
-## Svelte 는 무엇인가요?
+## What is Svelte?
 
 Svelte 는 사용자가 브라우저에서 보고 상호작용하는 UI 컴포넌트를 작성하는 방법입니다. 네비게이션 바, 댓글 섹션, 또는 연락처 양식과 같은 컴포넌트를 작성할 수 있습니다.
 Svelte 컴파일러는 컴포넌트를 페이지의 HTML 로 렌더링하고 페이지에 스타일을 적용할 수 있는 JavaScript 로 변환합니다.
