@@ -1,0 +1,29 @@
+{
+	"name": "sveltekit-docs-ko.understreak.com",
+	"version": "0.0.1",
+	"private": true,
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build",
+		"preview": "vite preview"
+	},
+	"devDependencies": {
+		"@sveltejs/adapter-auto": "^2.0.0",
+		"@sveltejs/kit": "^1.5.0",
+		"@sveltejs/site-kit": "^5.2.2",
+		"@types/node": "^20.3.1",
+		"magic-string": "^0.30.0",
+		"marked": "^4.3.0",
+		"prettier": "^2.8.8",
+		"prism-svelte": "^0.5.0",
+		"prismjs": "^1.29.0",
+		"shiki-twoslash": "^3.1.2",
+		"svelte": "^3.54.0",
+		"svelte-check": "^3.0.1",
+		"tiny-glob": "^0.2.9",
+		"typescript": "^5.0.0",
+		"vite": "^4.3.0",
+		"vite-imagetools": "^5.0.4"
+	},
+	"type": "module"
+}
