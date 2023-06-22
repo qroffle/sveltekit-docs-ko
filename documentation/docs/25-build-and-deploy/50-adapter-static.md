@@ -1,14 +1,15 @@
 ---
-title: Static site generation
+title: 정적 사이트 생성기
 ---
 
-To use SvelteKit as a static site generator (SSG), use [`adapter-static`](https://github.com/sveltejs/kit/tree/master/packages/adapter-static).
+SvelteKit 을 정적 사이트 생성기로 사용하려면 [`adapter-static`](https://github.com/sveltejs/kit/tree/master/packages/adapter-static) 를 사용하세요.
 
-This will prerender your entire site as a collection of static files. If you'd like to prerender only some pages and dynamically server-render others, you will need to use a different adapter together with [the `prerender` option](page-options#prerender).
+이 어댑터는 전체 사이트를 정적 파일으로 미리 렌더링합니다.
+만약 일부 페이지만 미리 렌더링하고 동적으로 서버 렌더링하려면, [`prerender` 옵션](page-options#prerender) 과 함께 다른 어댑터를 사용해야 합니다.
 
 ## Usage
 
-Install with `npm i -D @sveltejs/adapter-static`, then add the adapter to your `svelte.config.js`:
+`npm i -D @sveltejs/adapter-static` 으로 어탭터를 설치하고, `svelte.config.js` 에 어탭터를 추가하세요:
 
 ```js
 // @errors: 2307
@@ -30,7 +31,7 @@ export default {
 };
 ```
 
-...and add the [`prerender`](page-options#prerender) option to your root layout:
+이후 [`prerender`](page-options#prerender) 옵션을 루트 레이아웃에 추가하세요.
 
 ```js
 /// file: src/routes/+layout.js
@@ -38,15 +39,15 @@ export default {
 export const prerender = true;
 ```
 
-> You must ensure SvelteKit's [`trailingSlash`](page-options#trailingslash) option is set appropriately for your environment. If your host does not render `/a.html` upon receiving a request for `/a` then you will need to set `trailingSlash: 'always'` to create `/a/index.html` instead.
+> SvelteKit 의 [`trailingSlash`](page-options#trailingslash) 옵션이 배포하려는 환경에 적합한 값을 가지고 있어야 합니다. 만약 `/a` 요청을 받았을 때 `/a.html` 을 렌더링하지 않는다면, `trailingSlash: 'always'` 를 설정하여 `/a/index.html` 을 생성해야 합니다.
 
 ## Zero-config support
 
-Some platforms have zero-config support (more to come in future):
+일부 플랫폼은 무설정 지원을 제공합니다 (앞으로 더 많은 플랫폼이 지원될 예정입니다):
 
 - [Vercel](https://vercel.com)
 
-On these platforms, you should omit the adapter options so that `adapter-static` can provide the optimal configuration:
+이러한 플랫폼에서는 `adapter-static` 가 최적의 구성을 제공할 수 있도록 어댑터 옵션을 생략해야 합니다:
 
 ```diff
 /// file: svelte.config.js
