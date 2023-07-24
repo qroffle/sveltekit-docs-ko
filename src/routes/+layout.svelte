@@ -4,8 +4,6 @@
     import { Nav, NavItem, Separator, Shell } from '@sveltejs/site-kit/components';
 
     import '@sveltejs/site-kit/styles/index.css';
-
-    export let data;
 </script>
 
 
